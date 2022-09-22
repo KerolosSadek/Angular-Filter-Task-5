@@ -1,0 +1,26 @@
+<div class="container">
+    <h3 class="my-3">Angular Filter Task</h3>
+    <input class="w-75 my-4 ms-4 py-2" placeholder="Search.." #filterInput type="text" (input)="filter(filterInput)">
+  <div class="row">
+
+    <div class="col-12 col-md-4"*ngFor="let item of collection ; let f = first ; let l = last ; let i = index ; let e = even ; let o = odd">
+
+      <div class="card m-2" [ngClass]="{'text-danger' : f ,'bg-warning' : e, 'bg-light' : o }">
+
+        <img src="assets/images/download.jpg" class="card-img-top"/>
+
+        <div class="card-body">
+
+          <h4 class="card-title">{{ item.title }}</h4>
+          <h5>First: {{ f }} </h5>
+          <h5>Last: {{ l }} </h5>
+          <h5>Even: {{ e }} </h5>
+          <h5>Odd: {{ o }} </h5>
+          <h5>Index: {{ i }} </h5>
+          <h6 class="card-text"> {{ item.body }} </h6>
+          <a href="#" class="btn btn-primary"> Go somewhere </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
